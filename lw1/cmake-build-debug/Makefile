@@ -232,6 +232,79 @@ gtest/fast:
 	$(MAKE) -f lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/build.make lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
+#=============================================================================
+# Target rules for targets named csv-parser
+
+# Build rule for target.
+csv-parser: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 csv-parser
+.PHONY : csv-parser
+
+# fast build rule for target.
+csv-parser/fast:
+	$(MAKE) -f lib/CSVparser-master/CMakeFiles/csv-parser.dir/build.make lib/CSVparser-master/CMakeFiles/csv-parser.dir/build
+.PHONY : csv-parser/fast
+
+database/CDatabaseConsoleProgram.o: database/CDatabaseConsoleProgram.cpp.o
+
+.PHONY : database/CDatabaseConsoleProgram.o
+
+# target to build an object file
+database/CDatabaseConsoleProgram.cpp.o:
+	$(MAKE) -f CMakeFiles/lw1.dir/build.make CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o
+	$(MAKE) -f CMakeFiles/lw1_testing.dir/build.make CMakeFiles/lw1_testing.dir/database/CDatabaseConsoleProgram.cpp.o
+.PHONY : database/CDatabaseConsoleProgram.cpp.o
+
+database/CDatabaseConsoleProgram.i: database/CDatabaseConsoleProgram.cpp.i
+
+.PHONY : database/CDatabaseConsoleProgram.i
+
+# target to preprocess a source file
+database/CDatabaseConsoleProgram.cpp.i:
+	$(MAKE) -f CMakeFiles/lw1.dir/build.make CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.i
+	$(MAKE) -f CMakeFiles/lw1_testing.dir/build.make CMakeFiles/lw1_testing.dir/database/CDatabaseConsoleProgram.cpp.i
+.PHONY : database/CDatabaseConsoleProgram.cpp.i
+
+database/CDatabaseConsoleProgram.s: database/CDatabaseConsoleProgram.cpp.s
+
+.PHONY : database/CDatabaseConsoleProgram.s
+
+# target to generate assembly for a file
+database/CDatabaseConsoleProgram.cpp.s:
+	$(MAKE) -f CMakeFiles/lw1.dir/build.make CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.s
+	$(MAKE) -f CMakeFiles/lw1_testing.dir/build.make CMakeFiles/lw1_testing.dir/database/CDatabaseConsoleProgram.cpp.s
+.PHONY : database/CDatabaseConsoleProgram.cpp.s
+
+lib/CSVparser-master/CSVparser.o: lib/CSVparser-master/CSVparser.cpp.o
+
+.PHONY : lib/CSVparser-master/CSVparser.o
+
+# target to build an object file
+lib/CSVparser-master/CSVparser.cpp.o:
+	$(MAKE) -f CMakeFiles/lw1.dir/build.make CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o
+	$(MAKE) -f CMakeFiles/lw1_testing.dir/build.make CMakeFiles/lw1_testing.dir/lib/CSVparser-master/CSVparser.cpp.o
+.PHONY : lib/CSVparser-master/CSVparser.cpp.o
+
+lib/CSVparser-master/CSVparser.i: lib/CSVparser-master/CSVparser.cpp.i
+
+.PHONY : lib/CSVparser-master/CSVparser.i
+
+# target to preprocess a source file
+lib/CSVparser-master/CSVparser.cpp.i:
+	$(MAKE) -f CMakeFiles/lw1.dir/build.make CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.i
+	$(MAKE) -f CMakeFiles/lw1_testing.dir/build.make CMakeFiles/lw1_testing.dir/lib/CSVparser-master/CSVparser.cpp.i
+.PHONY : lib/CSVparser-master/CSVparser.cpp.i
+
+lib/CSVparser-master/CSVparser.s: lib/CSVparser-master/CSVparser.cpp.s
+
+.PHONY : lib/CSVparser-master/CSVparser.s
+
+# target to generate assembly for a file
+lib/CSVparser-master/CSVparser.cpp.s:
+	$(MAKE) -f CMakeFiles/lw1.dir/build.make CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.s
+	$(MAKE) -f CMakeFiles/lw1_testing.dir/build.make CMakeFiles/lw1_testing.dir/lib/CSVparser-master/CSVparser.cpp.s
+.PHONY : lib/CSVparser-master/CSVparser.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -304,6 +377,13 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... csv-parser"
+	@echo "... database/CDatabaseConsoleProgram.o"
+	@echo "... database/CDatabaseConsoleProgram.i"
+	@echo "... database/CDatabaseConsoleProgram.s"
+	@echo "... lib/CSVparser-master/CSVparser.o"
+	@echo "... lib/CSVparser-master/CSVparser.i"
+	@echo "... lib/CSVparser-master/CSVparser.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

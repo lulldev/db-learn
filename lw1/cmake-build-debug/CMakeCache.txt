@@ -201,6 +201,15 @@ PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
 
+//Dependencies for target
+csv-parser_LIB_DEPENDS:STATIC=
+
+//Value Computed by CMake
+csv_BINARY_DIR:STATIC=/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/lib/CSVparser-master
+
+//Value Computed by CMake
+csv_SOURCE_DIR:STATIC=/Users/lull/GitHub/db-learn/lw1/lib/CSVparser-master
+
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/lib/googletest-master/googlemock
 
@@ -365,7 +374,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

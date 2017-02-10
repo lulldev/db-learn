@@ -81,17 +81,69 @@ CMakeFiles/lw1.dir/main.cpp.o.provides: CMakeFiles/lw1.dir/main.cpp.o.requires
 CMakeFiles/lw1.dir/main.cpp.o.provides.build: CMakeFiles/lw1.dir/main.cpp.o
 
 
+CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o: CMakeFiles/lw1.dir/flags.make
+CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o: ../lib/CSVparser-master/CSVparser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o -c /Users/lull/GitHub/db-learn/lw1/lib/CSVparser-master/CSVparser.cpp
+
+CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lull/GitHub/db-learn/lw1/lib/CSVparser-master/CSVparser.cpp > CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.i
+
+CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lull/GitHub/db-learn/lw1/lib/CSVparser-master/CSVparser.cpp -o CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.s
+
+CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o.requires:
+
+.PHONY : CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o.requires
+
+CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o.provides: CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o.requires
+	$(MAKE) -f CMakeFiles/lw1.dir/build.make CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o.provides.build
+.PHONY : CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o.provides
+
+CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o.provides.build: CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o
+
+
+CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o: CMakeFiles/lw1.dir/flags.make
+CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o: ../database/CDatabaseConsoleProgram.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o -c /Users/lull/GitHub/db-learn/lw1/database/CDatabaseConsoleProgram.cpp
+
+CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lull/GitHub/db-learn/lw1/database/CDatabaseConsoleProgram.cpp > CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.i
+
+CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lull/GitHub/db-learn/lw1/database/CDatabaseConsoleProgram.cpp -o CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.s
+
+CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o.requires:
+
+.PHONY : CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o.requires
+
+CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o.provides: CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o.requires
+	$(MAKE) -f CMakeFiles/lw1.dir/build.make CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o.provides.build
+.PHONY : CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o.provides
+
+CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o.provides.build: CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o
+
+
 # Object files for target lw1
 lw1_OBJECTS = \
-"CMakeFiles/lw1.dir/main.cpp.o"
+"CMakeFiles/lw1.dir/main.cpp.o" \
+"CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o" \
+"CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o"
 
 # External object files for target lw1
 lw1_EXTERNAL_OBJECTS =
 
 lw1: CMakeFiles/lw1.dir/main.cpp.o
+lw1: CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o
+lw1: CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o
 lw1: CMakeFiles/lw1.dir/build.make
 lw1: CMakeFiles/lw1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable lw1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable lw1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lw1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,6 +152,8 @@ CMakeFiles/lw1.dir/build: lw1
 .PHONY : CMakeFiles/lw1.dir/build
 
 CMakeFiles/lw1.dir/requires: CMakeFiles/lw1.dir/main.cpp.o.requires
+CMakeFiles/lw1.dir/requires: CMakeFiles/lw1.dir/lib/CSVparser-master/CSVparser.cpp.o.requires
+CMakeFiles/lw1.dir/requires: CMakeFiles/lw1.dir/database/CDatabaseConsoleProgram.cpp.o.requires
 
 .PHONY : CMakeFiles/lw1.dir/requires
 

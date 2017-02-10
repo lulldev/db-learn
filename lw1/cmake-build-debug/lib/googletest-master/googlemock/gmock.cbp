@@ -5,7 +5,7 @@
 		<Option title="gmock"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="clang"/>
-		<Option virtualFolders="CMake Files\;CMake Files\lib\;CMake Files\lib\googletest-master\;CMake Files\lib\googletest-master\googlemock\;CMake Files\lib\googletest-master\googletest\;CMake Files\lib\googletest-master\googletest\cmake\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\lib\;CMake Files\lib\CSVparser-master\;CMake Files\lib\googletest-master\;CMake Files\lib\googletest-master\googlemock\;CMake Files\lib\googletest-master\googletest\;CMake Files\lib\googletest-master\googletest\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/lib/googletest-master/googlemock"/>
@@ -227,6 +227,12 @@
 		</Unit>
 		<Unit filename="/Users/lull/GitHub/db-learn/lw1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/lull/GitHub/db-learn/lw1/lib/CSVparser-master/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\CSVparser-master\"/>
+		</Unit>
+		<Unit filename="/Users/lull/GitHub/db-learn/lw1/lib/CSVparser-master/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\CSVparser-master\"/>
 		</Unit>
 		<Unit filename="/Users/lull/GitHub/db-learn/lw1/lib/googletest-master/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\lib\googletest-master\"/>

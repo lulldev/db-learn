@@ -28,3 +28,10 @@
 /Users/lull/GitHub/db-learn/lw1/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/install/strip.dir
 /Users/lull/GitHub/db-learn/lw1/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/install/local.dir
 /Users/lull/GitHub/db-learn/lw1/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir
+/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/lib/CSVparser-master/CMakeFiles/edit_cache.dir
+/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/lib/CSVparser-master/CMakeFiles/rebuild_cache.dir
+/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/lib/CSVparser-master/CMakeFiles/install/local.dir
+/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/lib/CSVparser-master/CMakeFiles/csv-parser.dir
+/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/lib/CSVparser-master/CMakeFiles/list_install_components.dir
+/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/lib/CSVparser-master/CMakeFiles/install.dir
+/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/lib/CSVparser-master/CMakeFiles/install/strip.dir

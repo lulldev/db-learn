@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/lull/GitHub/db-learn/lw1/database/CDatabaseConsoleProgram.cpp" "/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/CMakeFiles/lw1_testing.dir/database/CDatabaseConsoleProgram.cpp.o"
+  "/Users/lull/GitHub/db-learn/lw1/lib/CSVparser-master/CSVparser.cpp" "/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/CMakeFiles/lw1_testing.dir/lib/CSVparser-master/CSVparser.cpp.o"
   "/Users/lull/GitHub/db-learn/lw1/tests/tests.cpp" "/Users/lull/GitHub/db-learn/lw1/cmake-build-debug/CMakeFiles/lw1_testing.dir/tests/tests.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
