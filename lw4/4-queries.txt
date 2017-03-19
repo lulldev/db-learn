@@ -1,0 +1,20 @@
+1) INSERT
+INSERT INTO  `medicine`.`medicament` (
+`id_medicament` ,
+`title` ,
+`type`
+)
+VALUES (
+'3',  'Кагоцел',  '2'
+);
+
+2) DELETE
+DELETE FROM `medicine`.`pharmacy_owner` WHERE `pharmacy_owner`.`id_pharmacy_owner` = 3
+
+3) UPDATE
+UPDATE  `pharmacy` SET  `owner_pharmacy` =  '2' WHERE  `pharmacy`.`id_pharmacy` =2
+
+4) SELECT
+SELECT `title` FROM `medicament`
+SELECT * FROM `pharmacy`
+SELECT * FROM `medicament_presence` WHERE `id_medicament` = 2
