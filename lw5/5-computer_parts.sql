@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Апр 07 2017 г., 14:21
+-- Время создания: Апр 07 2017 г., 15:11
 -- Версия сервера: 5.5.49
 -- Версия PHP: 5.4.45-4+deprecated+dontuse+deb.sury.org~precise+1
 
@@ -31,7 +31,15 @@ CREATE TABLE IF NOT EXISTS `computer` (
   `computer_model` varchar(50) NOT NULL,
   `computer_name` varchar(50) NOT NULL,
   PRIMARY KEY (`id_computer`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Дамп данных таблицы `computer`
+--
+
+INSERT INTO `computer` (`id_computer`, `computer_model`, `computer_name`) VALUES
+(1, 'Samsung DS12313', 'Sumsung Cool 2'),
+(2, 'Hackintosh SR123123', 'Hackintosh Cool 3');
 
 -- --------------------------------------------------------
 
@@ -45,7 +53,16 @@ CREATE TABLE IF NOT EXISTS `computer_part` (
   `id_hardware` int(11) NOT NULL,
   PRIMARY KEY (`id_computer_part`),
   KEY `id_computer` (`id_computer`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Дамп данных таблицы `computer_part`
+--
+
+INSERT INTO `computer_part` (`id_computer_part`, `id_computer`, `id_hardware`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 2, 3);
 
 -- --------------------------------------------------------
 
@@ -56,9 +73,17 @@ CREATE TABLE IF NOT EXISTS `computer_part` (
 CREATE TABLE IF NOT EXISTS `computer_stock` (
   `id_stock_item` int(11) NOT NULL AUTO_INCREMENT,
   `count` int(11) NOT NULL,
-  `id_hardware` int(11) NOT NULL,
   PRIMARY KEY (`id_stock_item`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Дамп данных таблицы `computer_stock`
+--
+
+INSERT INTO `computer_stock` (`id_stock_item`, `count`) VALUES
+(1, 10),
+(2, 20),
+(3, 150);
 
 -- --------------------------------------------------------
 
@@ -78,7 +103,17 @@ CREATE TABLE IF NOT EXISTS `hardware` (
   KEY `presence_on_stock` (`presence_on_stock`),
   KEY `id_hardware_part` (`id_hardware_part`),
   KEY `id_hardware_price` (`id_hardware_price`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Дамп данных таблицы `hardware`
+--
+
+INSERT INTO `hardware` (`id_hardware`, `hardware_name`, `hardware_type`, `presence_on_stock`, `id_hardware_part`, `id_hardware_price`) VALUES
+(1, 'Apple SSD', 1, 1, 1, 1),
+(2, 'Samsung SSD', 1, 2, 2, 2),
+(3, 'Intel Core ', 2, 3, 2, 3),
+(4, 'Sony Monito', 3, 2, 3, 4);
 
 -- --------------------------------------------------------
 
@@ -88,11 +123,19 @@ CREATE TABLE IF NOT EXISTS `hardware` (
 
 CREATE TABLE IF NOT EXISTS `hardware_pricelist` (
   `id_hardware_price` int(11) NOT NULL AUTO_INCREMENT,
-  `id_hardware` int(11) NOT NULL,
   `price` int(11) NOT NULL,
-  PRIMARY KEY (`id_hardware_price`),
-  KEY `id_hardware` (`id_hardware`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`id_hardware_price`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Дамп данных таблицы `hardware_pricelist`
+--
+
+INSERT INTO `hardware_pricelist` (`id_hardware_price`, `price`) VALUES
+(1, 200),
+(2, 200),
+(3, 2000),
+(4, 2500);
 
 -- --------------------------------------------------------
 
@@ -104,7 +147,16 @@ CREATE TABLE IF NOT EXISTS `hardware_type` (
   `id_hardware_type` int(11) NOT NULL AUTO_INCREMENT,
   `hardware_type` enum('disk','ram','rom','cpu','monitor') NOT NULL,
   PRIMARY KEY (`id_hardware_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Дамп данных таблицы `hardware_type`
+--
+
+INSERT INTO `hardware_type` (`id_hardware_type`, `hardware_type`) VALUES
+(1, 'disk'),
+(2, 'ram'),
+(3, 'cpu');
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
