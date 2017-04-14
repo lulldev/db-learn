@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Апр 07 2017 г., 15:11
+-- Время создания: Апр 14 2017 г., 19:20
 -- Версия сервера: 5.5.49
 -- Версия PHP: 5.4.45-4+deprecated+dontuse+deb.sury.org~precise+1
 
@@ -52,7 +52,8 @@ CREATE TABLE IF NOT EXISTS `computer_part` (
   `id_computer` int(11) NOT NULL,
   `id_hardware` int(11) NOT NULL,
   PRIMARY KEY (`id_computer_part`),
-  KEY `id_computer` (`id_computer`)
+  KEY `id_computer` (`id_computer`),
+  KEY `id_hardware` (`id_hardware`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
@@ -72,7 +73,8 @@ INSERT INTO `computer_part` (`id_computer_part`, `id_computer`, `id_hardware`) V
 
 CREATE TABLE IF NOT EXISTS `computer_stock` (
   `id_stock_item` int(11) NOT NULL AUTO_INCREMENT,
-  `count` int(11) NOT NULL,
+  `count` int(11) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_stock_item`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
@@ -80,10 +82,10 @@ CREATE TABLE IF NOT EXISTS `computer_stock` (
 -- Дамп данных таблицы `computer_stock`
 --
 
-INSERT INTO `computer_stock` (`id_stock_item`, `count`) VALUES
-(1, 10),
-(2, 20),
-(3, 150);
+INSERT INTO `computer_stock` (`id_stock_item`, `count`, `price`) VALUES
+(1, 10, 0),
+(2, 20, 0),
+(3, 150, 0);
 
 -- --------------------------------------------------------
 
@@ -95,47 +97,19 @@ CREATE TABLE IF NOT EXISTS `hardware` (
   `id_hardware` int(11) NOT NULL AUTO_INCREMENT,
   `hardware_name` varchar(11) NOT NULL,
   `hardware_type` int(11) NOT NULL,
-  `presence_on_stock` int(11) NOT NULL,
-  `id_hardware_part` int(11) NOT NULL,
-  `id_hardware_price` int(11) NOT NULL,
+  `id_stock_item` int(11) NOT NULL,
   PRIMARY KEY (`id_hardware`),
   KEY `hardware_type` (`hardware_type`),
-  KEY `presence_on_stock` (`presence_on_stock`),
-  KEY `id_hardware_part` (`id_hardware_part`),
-  KEY `id_hardware_price` (`id_hardware_price`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  KEY `id_stock_item` (`id_stock_item`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `hardware`
 --
 
-INSERT INTO `hardware` (`id_hardware`, `hardware_name`, `hardware_type`, `presence_on_stock`, `id_hardware_part`, `id_hardware_price`) VALUES
-(1, 'Apple SSD', 1, 1, 1, 1),
-(2, 'Samsung SSD', 1, 2, 2, 2),
-(3, 'Intel Core ', 2, 3, 2, 3),
-(4, 'Sony Monito', 3, 2, 3, 4);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `hardware_pricelist`
---
-
-CREATE TABLE IF NOT EXISTS `hardware_pricelist` (
-  `id_hardware_price` int(11) NOT NULL AUTO_INCREMENT,
-  `price` int(11) NOT NULL,
-  PRIMARY KEY (`id_hardware_price`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
-
---
--- Дамп данных таблицы `hardware_pricelist`
---
-
-INSERT INTO `hardware_pricelist` (`id_hardware_price`, `price`) VALUES
-(1, 200),
-(2, 200),
-(3, 2000),
-(4, 2500);
+INSERT INTO `hardware` (`id_hardware`, `hardware_name`, `hardware_type`, `id_stock_item`) VALUES
+(2, 'Samsung SSD', 1, 2),
+(3, 'Apple SSD', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -163,34 +137,18 @@ INSERT INTO `hardware_type` (`id_hardware_type`, `hardware_type`) VALUES
 --
 
 --
--- Ограничения внешнего ключа таблицы `computer`
---
-ALTER TABLE `computer`
-  ADD CONSTRAINT `computer_ibfk_1` FOREIGN KEY (`id_computer`) REFERENCES `computer_part` (`id_computer`);
-
---
 -- Ограничения внешнего ключа таблицы `computer_part`
 --
 ALTER TABLE `computer_part`
-  ADD CONSTRAINT `computer_part_ibfk_1` FOREIGN KEY (`id_computer_part`) REFERENCES `hardware` (`id_hardware_part`);
+  ADD CONSTRAINT `computer_part_ibfk_2` FOREIGN KEY (`id_computer`) REFERENCES `computer` (`id_computer`);
 
 --
--- Ограничения внешнего ключа таблицы `computer_stock`
+-- Ограничения внешнего ключа таблицы `hardware`
 --
-ALTER TABLE `computer_stock`
-  ADD CONSTRAINT `computer_stock_ibfk_1` FOREIGN KEY (`id_stock_item`) REFERENCES `hardware` (`presence_on_stock`);
-
---
--- Ограничения внешнего ключа таблицы `hardware_pricelist`
---
-ALTER TABLE `hardware_pricelist`
-  ADD CONSTRAINT `hardware_pricelist_ibfk_1` FOREIGN KEY (`id_hardware_price`) REFERENCES `hardware` (`id_hardware_price`);
-
---
--- Ограничения внешнего ключа таблицы `hardware_type`
---
-ALTER TABLE `hardware_type`
-  ADD CONSTRAINT `hardware_type_ibfk_1` FOREIGN KEY (`id_hardware_type`) REFERENCES `hardware` (`hardware_type`);
+ALTER TABLE `hardware`
+  ADD CONSTRAINT `hardware_ibfk_4` FOREIGN KEY (`id_hardware`) REFERENCES `computer_part` (`id_hardware`),
+  ADD CONSTRAINT `hardware_ibfk_1` FOREIGN KEY (`hardware_type`) REFERENCES `hardware_type` (`id_hardware_type`),
+  ADD CONSTRAINT `hardware_ibfk_3` FOREIGN KEY (`id_stock_item`) REFERENCES `computer_stock` (`id_stock_item`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
