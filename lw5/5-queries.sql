@@ -52,10 +52,19 @@ SELECT id_hardware, COUNT(DISTINCT(count)) FROM `computer_stock`
 
 -- 6 GROUP BY -- 
 -- 6.1 SUM GROUP BY -- 
-SELECT * FROM hardware GROUP BY hardware_type
+SELECT hardware_type, COUNT(*) as hardware_count 
+FROM hardware 
+GROUP BY hardware_type
 
 -- 6.2 SUM WHERE GROUP BY -- 
-SELECT * FROM hardware GROUP BY hardware_type WHERE id_hardware_part = 2
+SELECT hardware_type, COUNT(*) as hardware_count 
+FROM hardware
+WHERE id_hardware  <> 1
+GROUP BY hardware_type
 
 -- 6.3 SUM GROUP BY HAVING -- 
-SELECT * FROM hardware GROUP BY hardware_type HAVING hardware_type > 1
+SELECT hardware_type, 
+COUNT(*) as hardware_count 
+FROM hardware
+GROUP BY hardware_type
+HAVING hardware_count > 0
