@@ -1,0 +1,61 @@
+1) 4.1. LEFT JOIN двух таблиц + WHERE по 1 атрибуту
+Текстовое описание какие данные хотим получить: 
+Получить список кинотеатров и свободных мест, где свободных мест > 50
+
+SQL запрос:
+SELECT c.cinema_id, c.cinema_name, ch.place_count
+FROM cinema c
+LEFT JOIN cinema_hall ch ON c.cinema_id = ch.cinema_id
+WHERE ch.place_count > 50
+
+План/Explain:
+id	select_type	table	type	possible_keys	key	key_len	ref	rows	Extra
+1	SIMPLE	ch	ALL	cinema_id	NULL	NULL	NULL	17466	Using where
+1	SIMPLE	c	eq_ref	PRIMARY	PRIMARY	4	cinema.ch.cinema_id	1		
+2) RIGHT JOIN двух таблиц, получить те же записи как в 4.1.
+Текстовое описание какие данные хотим получить: 
+Получить список кинотеатров и свободных мест, где свободных мест > 50
+
+SQL запрос:
+SELECT c.cinema_id, c.cinema_name, ch.place_count
+FROM cinema c
+RIGHT JOIN cinema_hall ch ON c.cinema_id = ch.cinema_id
+WHERE ch.place_count > 50
+
+План/Explain:
+id	select_type	table	type	possible_keys	key	key_len	ref	rows	Extra
+1	SIMPLE	ch	ALL	NULL	NULL	NULL	NULL	17466	Using where
+1	SIMPLE	c	eq_ref	PRIMARY	PRIMARY	4	cinema.ch.cinema_id	1
+
+3) 4.3. LEFT JOIN двух таблиц + WHERE по 2 атрибутам из 1 таблицы 
+Текстовое описание какие данные хотим получить: 
+Неповторяющийся список фильмов по именам и продолжительность проката каждого фильма
+
+SQL запрос:
+SELECT DISTINCT(f.film_name), DATEDIFF(fr.date_end, fr.date_start) as rent_duration
+FROM film f
+LEFT JOIN film_rent fr ON f.film_id = fr.film_id
+WHERE f.film_name LIKE 'D%' AND f.film_duration < 120
+AND fr.date_start IS NOT NULL AND fr.date_end IS NOT NULL
+ORDER BY fr.date_start ASC
+
+План/Explain:
+id	select_type	table	type	possible_keys	key	key_len	ref	rows	Extra
+1	SIMPLE	fr	ALL	film_id	NULL	NULL	NULL	17098	Using where; Using temporary; Using filesort
+1	SIMPLE	f	eq_ref	PRIMARY	PRIMARY	4	cinema.fr.film_id	1	Using where
+
+4) 4.4. LEFT JOIN двух таблиц + WHERE по 1 атрибуту из каждой таблицы 
+Текстовое описание какие данные хотим получить: 
+Список фильмов продолжительностью < 100 минут и те, дата проката которых начинается сегодня
+
+SQL запрос:
+SELECT f . * , fr.date_start
+FROM film f
+LEFT JOIN film_rent fr ON f.film_id = fr.film_id
+WHERE fr.date_start > CURRENT_TIMESTAMP AND f.film_duration <100
+ORDER BY fr.date_start ASC 
+	
+План/Explain:
+id	select_type	table	type	possible_keys	key	key_len	ref	rows	Extra
+1	SIMPLE	fr	ALL	film_id	NULL	NULL	NULL	17098	Using where; Using filesort
+1	SIMPLE	f	eq_ref	PRIMARY	PRIMARY	4	cinema.fr.film_id	1	Using where
